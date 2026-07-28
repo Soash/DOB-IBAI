@@ -214,5 +214,25 @@
 </main>
 {% endblock %}
 
+{% block extra_javascript %}
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const headings = document.querySelectorAll(".gridarea__heading");
+        let maxHeight = 0;
+
+        // 1️⃣ Find the tallest heading
+        headings.forEach(h => {
+            const height = h.offsetHeight;
+            if (height > maxHeight) maxHeight = height;
+        });
+
+        // 2️⃣ Apply that height to all
+        headings.forEach(h => {
+            h.style.height = maxHeight + "px";
+        });
+    });
+</script>
+{% endblock extra_javascript %}
+
 
 
