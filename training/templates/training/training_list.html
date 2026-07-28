@@ -1,6 +1,24 @@
 {% extends 'base.html' %}
 {% load static i18n %}
 {% block title %}Training List{% endblock %}
+
+{% block extra_css %}
+<style>
+    .gridarea__wraper .gridarea__img {
+        height: 200px; /* choose the height you want */
+        overflow: hidden;
+        position: relative;
+    }
+
+    .gridarea__wraper .gridarea__img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* ensures the image fills the container */
+        display: block;
+    }
+</style>
+{% endblock extra_css %}
+
 {% block content %}
 {% comment %} {% include 'partials/theme-switch.html' %} {% endcomment %}
 
@@ -128,16 +146,14 @@
     <div class="container full__width__padding">
       <div class="row">
         {% for training in trainings %}
-        <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12" data-aos="fade-up">    
+        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12" data-aos="fade-up">    
           <div class="gridarea__wraper gridarea__wraper__2 zoom__meeting__grid">
-              <div class="ratio ratio-4x3 overflow-hidden rounded mb-3">
-                <a href="#">
+              <div class="gridarea__img">
+                <a href="{% url 'training_detail' training.slug %}">
                     {% if training.thumbnail %}
-                        <img loading="lazy" src="{{ training.thumbnail.url }}" alt="grid"
-                            class="img-fluid h-100 w-100" style="object-fit: cover;">
+                        <img loading="lazy" src="{{ training.thumbnail.url }}" alt="grid">
                     {% else %}
-                        <img loading="lazy" src="{% static 'img/zoom/1.jpg' %}" alt="grid"
-                            class="img-fluid h-100 w-100" style="object-fit: cover;">
+                        <img loading="lazy" src="{% static 'img/zoom/1.jpg' %}" alt="grid">
                     {% endif %}
                 </a>
               </div>
