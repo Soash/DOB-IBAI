@@ -148,5 +148,8 @@ def thesis_details(request, slug):
     post = get_object_or_404(Thesis, slug=slug, published=True)
     return render(request, 'blog/thesis_detail.html', {'post': post,})
 
+def thesis_support_details(request):
+    return render(request, 'blog/thesis_support_details.html')
+
 
 

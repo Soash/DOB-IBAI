@@ -1,0 +1,219 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Thesis Support Details - IBAI{% endblock %}
+
+{% block extra_css %}
+<style>
+    .thesis-detail-section {
+        margin-bottom: 2.5rem;
+    }
+    .thesis-detail-section h3 {
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: #2c3e50;
+        border-bottom: 2px solid #eef2f5;
+        padding-bottom: 10px;
+    }
+    .thesis-detail-section p, .thesis-detail-section li {
+        font-size: 16px;
+        color: #555;
+        line-height: 1.8;
+        text-align: justify;
+    }
+    .highlight-card {
+        background: #f8f9fa;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        height: 100%;
+        border-left: 4px solid #0d6efd;
+    }
+    .highlight-card h5 {
+        color: #0d6efd;
+        font-weight: 600;
+    }
+    .apply-btn-wrapper {
+        text-align: center;
+        margin-top: 3rem;
+    }
+    .list-styled {
+        padding-left: 1.5rem;
+    }
+    .list-styled li {
+        margin-bottom: 0.5rem;
+    }
+    .areas-list {
+        list-style: none;
+        padding-left: 0;
+    }
+    .areas-list li {
+        display: block;
+        position: relative;
+        padding-left: 32px;
+        margin-bottom: 14px;
+        font-weight: 500;
+        color: #34495e;
+        transition: all 0.3s ease;
+    }
+    .areas-list li:hover {
+        color: #0d6efd;
+        transform: translateX(5px);
+    }
+    .areas-list li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 4px;
+        width: 20px;
+        height: 20px;
+        background-color: #0d6efd;
+        border-radius: 50%;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+        background-size: 14px;
+        background-repeat: no-repeat;
+        background-position: center;
+        box-shadow: 0 2px 5px rgba(13, 110, 253, 0.3);
+    }
+</style>
+{% endblock extra_css %}
+
+{% block content %}
+<main class="main_wrapper">
+
+    {% include 'partials/top-banner.html' %}
+    {% include 'partials/navbar.html' %}
+    {% include 'partials/mobile-menu.html' %}
+
+    <div class="breadcrumbarea">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="breadcrumb__content__wraper" data-aos="fade-up">
+                        <div class="breadcrumb__title">
+                            <h2 class="heading">Thesis Support Details</h2>
+                        </div>
+                        <div class="breadcrumb__inner">
+                            <ul>
+                                <li><a href="/">Home</a></li>
+                                <li><a href="{% url 'thesis_list' %}">Thesis Support</a></li>
+                                <li>Details</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="shape__icon__2">
+            <img loading="lazy" class="shape__icon__img shape__icon__img__1" src="{% static 'img/herobanner/herobanner__1.png' %}">
+            <img loading="lazy" class="shape__icon__img shape__icon__img__2" src="{% static 'img/herobanner/herobanner__2.png' %}">
+            <img loading="lazy" class="shape__icon__img shape__icon__img__3" src="{% static 'img/herobanner/herobanner__3.png' %}">
+            <img loading="lazy" class="shape__icon__img shape__icon__img__4" src="{% static 'img/herobanner/herobanner__5.png' %}">
+        </div>
+    </div>
+
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-xl-10 col-lg-12">
+
+                <!-- Who It's For -->
+                <div class="thesis-detail-section" data-aos="fade-up">
+                    <h3>Who It's For</h3>
+                    <p>Built for BSc graduates entering independent research, and for MSc/PhD students actively working on a thesis in bioinformatics, computational biology, genomics, or a related life-science field. It works whether you're starting from a blank page and need help picking a viable topic, or you're already midway through data analysis and just need an experienced second set of hands to get unstuck. What connects these students isn't their university or subfield, it's that technical support and mentorship, not motivation or ability, is the one thing standing between them and a completed thesis.</p>
+                </div>
+
+                <!-- What's Covered -->
+                <div class="thesis-detail-section" data-aos="fade-up">
+                    <h3>What's Covered</h3>
+                    <p>Every engagement starts with refining a workable thesis topic and shaping it into a proposal that will hold up during committee review, followed by building a research methodology that can stand up to academic scrutiny. From there, the mentor stays closely involved through the data analysis and technical execution stage, typically where students without lab access get stuck the longest, followed by support in interpreting results in a way that ties clearly back to the original research questions. Support continues through writing the thesis or manuscript itself, and for students who want to go further, guidance on preparing a publication from the same research is included as well.</p>
+                </div>
+
+                <!-- Areas of Expertise -->
+                <div class="thesis-detail-section" data-aos="fade-up">
+                    <h3>Areas of Expertise</h3>
+                    <p>Our mentors work across the full spectrum of computational biology, genomics, proteomics, metagenomics, transcriptomics, immunoinformatics, systems biology, and machine learning applied to biological data, supporting both experimental research that pairs wet-lab work with computational analysis, and fully computational, dry-lab-only studies. On top of this broad foundation, IBAI has built particular depth in a few flagship areas:</p>
+                    
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <ul class="list-styled areas-list">
+                                <li>Advanced Computer-Aided Drug Design (CADD)</li>
+                                <li>Genome Sequencing Data Analysis</li>
+                                <li>RNA-seq & Microarray Data Analysis</li>
+                                <li>Metagenomic Data Analysis</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-styled areas-list">
+                                <li>Multi-Epitope Vaccine Design</li>
+                                <li>Molecular Biological Data Analysis Using ML & AI</li>
+                                <li>Other bioinformatics and computational biology research areas, on request</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Program Highlights -->
+                <div class="thesis-detail-section" data-aos="fade-up">
+                    <h3>Program Highlights</h3>
+                    <div class="row g-4 mt-2">
+                        <div class="col-md-6">
+                            <div class="highlight-card">
+                                <h5>Duration & Format</h5>
+                                <ul class="list-unstyled mb-0">
+                                    <li><strong>Duration:</strong> 3–6 months, tailored to your timeline</li>
+                                    <li><strong>Format:</strong> Thesis / Project</li>
+                                    <li><strong>Support Mode:</strong> Online & Offline</li>
+                                    <li><strong>Session Type:</strong> One-to-One (dedicated mentor)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="highlight-card">
+                                <h5>Logistics & Access</h5>
+                                <ul class="list-unstyled mb-0">
+                                    <li><strong>Response Time:</strong> Within 4 hours, 7 days a week</li>
+                                    <li><strong>Software:</strong> Fully included throughout the program</li>
+                                    <li><strong>Session Language:</strong> Bangla</li>
+                                    <li><strong>Certificate:</strong> Awarded on completion</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Delivery Branches -->
+                <div class="thesis-detail-section" data-aos="fade-up">
+                    <h3>Delivery Branches</h3>
+                    <p>Sessions run fully online for students anywhere in Bangladesh, or as a hybrid option pairing online mentorship with in-person sessions at DOB's Dhaka office (Staff Quarter, Demra) or Chittagong office (Forest Gate, Muradpur), for students who prefer occasional face-to-face contact.</p>
+                </div>
+
+                <!-- Why IBAI Thesis Support -->
+                <div class="thesis-detail-section" data-aos="fade-up">
+                    <h3>Why IBAI Thesis Support</h3>
+                    <ul class="list-styled areas-list">
+                        <li>Dedicated one-to-one mentorship</li>
+                        <li>Full software and infrastructure access</li>
+                        <li>Fast and reliable response time</li>
+                        <li>Certificate of completion</li>
+                        <li>Designed for students without lab access</li>
+                    </ul>
+                </div>
+
+                <!-- How to Apply -->
+                <div class="thesis-detail-section" data-aos="fade-up">
+                    <h3>How to Apply</h3>
+                    <p>Getting started is simple, complete a short online application covering your academic background and area of research interest. Our team reviews the submission and pairs you with a mentor whose expertise matches your subfield and thesis goals. The engagement then begins with an initial consultation to finalize scope, timeline, and working schedule.</p>
+                    
+                    <div class="apply-btn-wrapper">
+                        <a href="https://forms.gle/vnWyAE8QQoUEWLKC9" class="btn btn-primary btn-lg px-5 py-3 shadow-sm rounded-pill" target="_blank" data-aos="zoom-in">Apply Now</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    {% include 'partials/footer.html' %}
+</main>
+{% endblock %}
