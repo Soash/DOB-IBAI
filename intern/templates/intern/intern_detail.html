@@ -264,6 +264,7 @@
               <div class="course__summery__lists">
                 <ul>
                   <li><div class="course__summery__item"><span class="sb_label">Price</span><span class="sb_content text-bg-warning">৳{{ intern.current_price|default:"0" }}</span></div></li>
+                  <li><div class="course__summery__item"><span class="sb_label">Starting Date</span><span class="sb_content">{{ intern.date|date:"M d, Y" }}</span></div></li>
                   <li><div class="course__summery__item"><span class="sb_label">Instalment</span><span class="sb_content">Applicable</span></div></li>
                   <li><div class="course__summery__item"><span class="sb_label">Duration</span><span class="sb_content">{{ intern.duration|default:"6 Months" }}</span></div></li>
                   <li><div class="course__summery__item"><span class="sb_label">Mode</span><span class="sb_content">{{ intern.mode|default:"Online & Offline" }}</span></div></li>
